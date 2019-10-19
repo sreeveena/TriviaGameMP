@@ -54,4 +54,68 @@ $(document).ready(function(){
 
 
     ];
+
+    //variable correctAnswers will have number of correct answers a user has got in the trivia
+var correctAnswers = 0;
+//variable inCorrectAnswers will have number of  in correct answers a user has got in the trivia
+var inCorrectAnswers = 0;
+//variable unAnswered will have number of un answered questions a user has got in the trivia
+var unAnswered = 0;
+//variable to set time for the trivia
+var timeRemain = 120;
+//variable to set the time
+var intervalId;
+//variable question is to generate the question after start button is clicked
+var question;
+//variable option is to generate the radio button options for answers after start button is clicked
+var option;
+//variable Done button to exit the trivia questions before the timer come to zero.
+var doneButton;
+
+//function timeRemaining will set the time in html timeRemaining class 
+    //reducea the time every one second.
+    //clears time if the timer reaches to 0 and calls the function timer.
+    // function timeRemaining(){
+    //     $(".timeRemaining").text("Time Remaining :" + timeRemain );
+    //     timeRemain--;
+    //     if(timeRemain == 0){
+    //         clearInterval(intervalId);
+    //         timer();
+    //     }
+    // }
+
+
+    function startGame(){
+        $(".start").remove();
+        correctAnswers = 0;
+        inCorrectAnswers = 0;
+        unAnswered = 0;
+        timeRemain = 60;
+        $(".timeRemaining").text("Time Remaining :" + timeRemain );
+        // intervalId = setInterval(timeRemaining, 1000);
+        for(var i=0; i<myQuestions.length; i++){
+            question = $("<p style='font-size: 1.5em'>" + myQuestions[i].question + "</p>");
+            $("#questions").append(question);
+            // $("#questions").append($("<select class='answers'>"));
+            for( var j=0; j< myQuestions[i].answers.length; j++){
+                option = $("<div class='not-selected' value='"+myQuestions[i].answers[j]+"'>" + myQuestions[i].answers[j] + "</div>");
+                $("#questions").append(option);
+            }
+            
+        }
+    }
+   
+// function timer(){
+//     clearInterval(intervalId);
+//     results();
+//     $(".timeRemaining").remove();
+//     $("#questions").remove();
+//     $(".done").append("<h4 style= 'font-size:2em'> All Done!</h4>");
+//     $(".correctAns").append("<h4>Correct Answers :" + correctAnswers + "</h4>");
+//     $(".inCorrectAns").append("<h4> Incorrect Answers :" + inCorrectAnswers + "</h4>");
+//     $(".unAns").append("<h4>Unanswered :" + unAnswered + "</h4>"); 
+
+// }
+ //startGame function is called when start button is clicked.
+$(".start").on("click", startGame); 
 })

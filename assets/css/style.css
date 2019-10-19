@@ -41,14 +41,14 @@ h1{
     font-size: 2em;
 }
 /* done button dimensions, color and alignment */
-#done{
+/* #done{
     background: lightpink;
     border-color: blue;
     width: 300px;
     height: 75px;
     text-align: center;
     font-size: 2em;
-}
+} */
 /* font size for correct answer, incorrect answer and unanswered statements */
 .correctAns{
     font-size: 1.5em;
@@ -58,4 +58,16 @@ h1{
 }
 .unAns{
     font-size: 1.5em;
+}
+.not-selected:hover{
+    background: lightpink;
+    border-color: blue;
+    border-style: solid;
+}
+.not-selected{
+    font-size: 2em;
+    width: 500px;
+    height: 75px;
+    margin: auto;
+    padding-top: 25px;
 }
