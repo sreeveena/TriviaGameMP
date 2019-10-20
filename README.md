@@ -13,28 +13,27 @@ This assignment has one HTML page, one javascript file and one CSS file:
 
  The following directories and files are in this project.
  '''
-├── README.md
-├── assets
-│   ├── css
-│   │   └── style.css
-│   ├── images
-│   │   ├── Piston_cup.png
-│   │   ├── Pixarlogo.jpg
-│   │   ├── bugsLife.gif
-│   │   ├── cars2.gif
-│   │   ├── incredeables.gif
-│   │   ├── monsterInc.gif
-│   │   ├── monsterUniversity.png
-│   │   ├── pixarlogo1.jpg
-│   │   ├── toy.gif
-│   │   ├── toyStory3.gif
-│   │   ├── up.gif
-│   │   └── wall-e.gif
-│   └── javascript
-│       └── app.js
-└── index.html
-
-
+ $./tree-md .
+ #TriviaGameMP tree
+ *README.md
+ *index.html
+ *assets
+    *css
+        *style.css
+    *javascript
+        *app.js
+    *images
+        *Piston_cup.png
+        *Pixarlogo.jpg
+        *bugsLife.gif
+        *cars2.gif
+        *monsterInc.gif
+        *monsterUniversity.png
+        *pixarlogo1.jpg
+        *toy.gif
+        *toyStory3.gif
+        *up.gif
+        *wall-e.gif*
  '''
 
 In this Trivia game the player has to click on start button and have to answer the one trivia questions with multiple options for answers
@@ -55,6 +54,8 @@ In index page the following is the body block
     </div>
 </body>
 '''
+
+
  javascript file  has multiple functions.
 
 function timeRemaining will set the time in html timeRemaining class 
@@ -81,29 +82,28 @@ message and image relevant to the question with the correct answer and increment
 function startGame will remove start button and create html tags for time remaining, question and answer options and calls results function.
 clear correct answer, incorrect answer and unanswered  div's which result function has generated every time a new question is displayed with its options. set time interval for each question as 20 sec and also iterate through answers object in myQuestion to display all the options to the player.
 '''
-    function startGame(){
-        $(".start").remove();
-        $(".unAns").remove();
-        $(".correctAns").remove();
-        $(".inCorrectAns").remove();
-        timeRemain = 20;
-        time1 = $("<div id='timeRemaining'></div>");
-        $(".main").append(time1);
-        $("#timeRemaining").text("Time Remaining :" + timeRemain );
-        intervalId = setInterval(timeRemaining, 1000);
-        question1 = $("<div id='questions'></div>");
-        $(".main").append(question1);
-        question = $("<p style='font-size: 1.5em'>" + myQuestions[qi].question + "</p>");
-        $("#questions").append(question);
-        for( ai=0; ai< myQuestions[qi].answers.length; ai++){
-            option = $("<div class='not-selected' id='answer"+ai+"' value='"+myQuestions[qi].answers[ai]+"'>" + myQuestions[qi].answers[ai] + "</div>");
-            $("#questions").append(option);
-            $("#answer"+ ai).click(function(){
-                    results($(this).attr("value"));
-
-            });
-        }
+function startGame(){
+    $(".start").remove();
+    $(".unAns").remove();
+    $(".correctAns").remove();
+    $(".inCorrectAns").remove();
+    timeRemain = 20;
+    time1 = $("<div id='timeRemaining'></div>");
+    $(".main").append(time1);
+    $("#timeRemaining").text("Time Remaining :" + timeRemain );
+    intervalId = setInterval(timeRemaining, 1000);
+    question1 = $("<div id='questions'></div>");
+    $(".main").append(question1);
+    question = $("<p style='font-size: 1.5em'>" + myQuestions[qi].question + "</p>");
+    $("#questions").append(question);
+    for( ai=0; ai< myQuestions[qi].answers.length; ai++){
+        option = $("<div class='not-selected' id='answer"+ai+"' value='"+myQuestions[qi].answers[ai]+"'>" + myQuestions[qi].answers[ai] + "</div>");
+        $("#questions").append(option);
+        $("#answer"+ ai).click(function(){
+                results($(this).attr("value"));
+        });
     }
+}
 '''
 function FinalResult will remove timeRemaining, question, correct, incorrect and unanswered questions
 and display number of correct answers, incorrect answers and unanswered questions
