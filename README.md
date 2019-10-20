@@ -36,8 +36,8 @@ This assignment has one HTML page, one javascript file and one CSS file:
         *toyStory3.gif
         *up.gif
         *wall-e.gif*
+        
         '''bash
-        .
 ├── README.md
 ├── assets
 │   ├── css
