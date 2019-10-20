@@ -10,7 +10,7 @@ body{
     background: lemonchiffon;
     text-align: center;
     margin: 0 auto;
-    margin-top: 250px;
+    margin-top: 150px;
     padding: 10px 20px 60px 20px;
 
 }
@@ -69,4 +69,8 @@ h1{
     width: 500px;
     height: 40px;
     margin: auto;
+}
+img{
+    width: 200px;
+    height: 200px;
 }

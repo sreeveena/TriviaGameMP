@@ -87,8 +87,11 @@ var qi = 0;
 var ai = 0;
 //variable to populate image object
 var img;
+//variable to populate div for questions
 var question1;
+//variable to populate div for answer options
 var answer;
+
 //function timeRemaining will set the time in html timeRemaining class 
     //reducea the time every one second.
     //clears time if the timer reaches to 0 and calls the function timer.
@@ -102,7 +105,7 @@ var answer;
         $(".main").append(answer);
         $(".unAns").append("<h4>Out of Time!</h4>"); 
         $(".unAns").append("<h4>The correct answer was: "+myQuestions[qi].correctAnswer+"</h4>");
-        img = $("<img  style= 'width: 60px, height: 60px' src='"+myQuestions[qi].image+"'>");
+        img = $("<img src='"+myQuestions[qi].image+"'>");
         $(".unAns").append(img);
         unAnswered++;
         }
@@ -154,7 +157,7 @@ var answer;
             answer = $("<div class='correctAns'></div>");
             $(".main").append(answer);
             $(".correctAns").append("<h4>Correct !</h4>"); 
-            img = $("<img  style= 'width: 60px, height: 60px' src='"+myQuestions[qi].image+"'>");
+            img = $("<img src='"+myQuestions[qi].image+"'>");
             $(".correctAns").append(img);
             correctAnswers++;
         } else{
@@ -163,7 +166,7 @@ var answer;
             $(".main").append(answer);
             $(".inCorrectAns").append("<h4>Nope !</h4>"); 
             $(".inCorrectAns").append("<h4>The correct answer was: "+myQuestions[qi].correctAnswer+"</h4>");
-            img = $("<img  style= 'width: 60px, height: 60px' src='"+myQuestions[qi].image+"'>");
+            img = $("<img src='"+myQuestions[qi].image+"'>");
             $(".inCorrectAns").append(img);
             inCorrectAnswers++;
         }
@@ -171,7 +174,7 @@ var answer;
   
  function finalResult(){
     clearInterval(intervalId);       
-    $(".timeRemaining").remove();
+    $("#timeRemaining").remove();
     $("#questions").remove();
     $(".inCorrectAns").remove();
     $(".correctAns").remove();
