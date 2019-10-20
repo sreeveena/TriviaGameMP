@@ -173,11 +173,26 @@ var answer;
     clearInterval(intervalId);
     $(".timeRemaining").remove();
     $("#questions").remove();
+
+    answer = $("<div class='done'></div>");
+    $(".main").append(answer);
     $(".done").append("<h4 style= 'font-size:2em'> All Done!</h4>");
+
+    answer = $("<div class='correctAns'></div>");
+    $(".main").append(answer);
     $(".correctAns").append("<h4>Correct Answers :" + correctAnswers + "</h4>");
+
+    answer = $("<div class='inCorrectAns'></div>");
+    $(".main").append(answer);
     $(".inCorrectAns").append("<h4> Incorrect Answers :" + inCorrectAnswers + "</h4>");
+
+    answer = $("<div class='unAns'></div>");
+    $(".main").append(answer);
     $(".unAns").append("<h4>Unanswered :" + unAnswered + "</h4>"); 
 
+    startOverButton = $("<br><button id= 'done'> Start Over </button>");
+   $(".main").append(startOverButton);
+   $("#done").on("click",startGame);
  }
  //startGame function is called when start button is clicked.
 $(".start").on("click", startGame); 
