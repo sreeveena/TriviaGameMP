@@ -94,7 +94,8 @@ var answer;
 
 //function timeRemaining will set the time in html timeRemaining class 
     //reducea the time every one second.
-    //clears time if the timer reaches to 0 and calls the function timer.
+    //clears time if the timer reaches to 0 then removes the question and displays 
+    //message and image relevant to the question with the correct answer and increment unAns variable.
     function timeRemaining(){
         $("#timeRemaining").text("Time Remaining :" + timeRemain );
         if(timeRemain == 0){
@@ -111,8 +112,10 @@ var answer;
         }
         timeRemain--;
     }
-
-
+// function startGame will remove start button and create html tags for time remaining, question and answer options and calls results function.
+//clear correct answer, incorrect answer and unanswered  div's which result function has generated every time a new question is displayed with its options.
+//set time interval for each question as 20 sec.
+//iterate through answers object in myQuestion to display all the options to the player.
     function startGame(){
         $(".start").remove();
         $(".unAns").remove();
@@ -122,22 +125,27 @@ var answer;
         time1 = $("<div id='timeRemaining'></div>");
         $(".main").append(time1);
         $("#timeRemaining").text("Time Remaining :" + timeRemain );
-         intervalId = setInterval(timeRemaining, 1000);
-         question1 = $("<div id='questions'></div>");
-            $(".main").append(question1);
-            question = $("<p style='font-size: 1.5em'>" + myQuestions[qi].question + "</p>");
-            $("#questions").append(question);
-            // $("#questions").append($("<select class='answers'>"));
-            for( ai=0; ai< myQuestions[qi].answers.length; ai++){
-                option = $("<div class='not-selected' id='answer"+ai+"' value='"+myQuestions[qi].answers[ai]+"'>" + myQuestions[qi].answers[ai] + "</div>");
-                $("#questions").append(option);
-                $("#answer"+ ai).click(function(){
-                     results($(this).attr("value"));
+        intervalId = setInterval(timeRemaining, 1000);
+        question1 = $("<div id='questions'></div>");
+        $(".main").append(question1);
+        question = $("<p style='font-size: 1.5em'>" + myQuestions[qi].question + "</p>");
+        $("#questions").append(question);
+        // $("#questions").append($("<select class='answers'>"));
+        for( ai=0; ai< myQuestions[qi].answers.length; ai++){
+            option = $("<div class='not-selected' id='answer"+ai+"' value='"+myQuestions[qi].answers[ai]+"'>" + myQuestions[qi].answers[ai] + "</div>");
+            $("#questions").append(option);
+            $("#answer"+ ai).click(function(){
+                    results($(this).attr("value"));
 
-                });
-            }
-            
+            });
+        }
     }
+    // function nextQuestion will increment qi which will help startGame function to display next question when called.
+    //clear the interval time
+    //check if the question is last question
+        // then call finalResult function
+    //else call the startGame function to display the next question.
+
     function nextQuestion(){
         qi++;
         clearInterval(intervalId4s);
@@ -146,8 +154,9 @@ var answer;
         }else{
             finalResult();
         }
-       
     }
+    //function results will be displayed when an option in the answer is clicked and checks if the option selected is correct or wrong and increment the 
+    //correct or incorrect values accordingly and randomly generate html div and img tags to display the meassage and image relavent to the question.
     function results(ans){
         clearInterval(intervalId);
 
@@ -171,7 +180,7 @@ var answer;
             inCorrectAnswers++;
         }
     }
-  
+  //
  function finalResult(){
     clearInterval(intervalId);       
     $("#timeRemaining").remove();
