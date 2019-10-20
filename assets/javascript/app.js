@@ -93,7 +93,7 @@ var question1;
 var answer;
 
 //function timeRemaining will set the time in html timeRemaining class 
-    //reducea the time every one second.
+    //reduces the time every one second.
     //clears time if the timer reaches to 0 then removes the question and displays 
     //message and image relevant to the question with the correct answer and increment unAns variable.
     function timeRemaining(){
