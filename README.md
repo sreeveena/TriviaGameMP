@@ -36,6 +36,29 @@ This assignment has one HTML page, one javascript file and one CSS file:
         *toyStory3.gif
         *up.gif
         *wall-e.gif*
+        '''bash
+        .
+├── README.md
+├── assets
+│   ├── css
+│   │   └── style.css
+│   ├── images
+│   │   ├── Piston_cup.png
+│   │   ├── Pixarlogo.jpg
+│   │   ├── bugsLife.gif
+│   │   ├── cars2.gif
+│   │   ├── incredeables.gif
+│   │   ├── monsterInc.gif
+│   │   ├── monsterUniversity.png
+│   │   ├── pixarlogo1.jpg
+│   │   ├── toy.gif
+│   │   ├── toyStory3.gif
+│   │   ├── up.gif
+│   │   └── wall-e.gif
+│   └── javascript
+│       └── app.js
+└── index.html
+'''
  
 
 In this Trivia game the player has to click on start button and have to answer the one trivia questions with multiple options for answers
