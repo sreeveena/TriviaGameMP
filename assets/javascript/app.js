@@ -93,7 +93,7 @@ var answer;
     //reducea the time every one second.
     //clears time if the timer reaches to 0 and calls the function timer.
     function timeRemaining(){
-        $(".timeRemaining").text("Time Remaining :" + timeRemain );
+        $("#timeRemaining").text("Time Remaining :" + timeRemain );
         timeRemain--;
         if(timeRemain == 0){
             clearInterval(intervalId);
@@ -116,7 +116,9 @@ var answer;
         $(".correctAns").remove();
         $(".inCorrectAns").remove();
         timeRemain = 20;
-        $(".timeRemaining").text("Time Remaining :" + timeRemain );
+        time1 = $("<div id='timeRemaining'></div>");
+        $(".main").append(time1);
+        $("#timeRemaining").text("Time Remaining :" + timeRemain );
          intervalId = setInterval(timeRemaining, 1000);
          question1 = $("<div id='questions'></div>");
             $(".main").append(question1);
@@ -170,11 +172,11 @@ var answer;
  function finalResult(){
     clearInterval(intervalId);
     $(".timeRemaining").remove();
-//     $("#questions").remove();
-//     $(".done").append("<h4 style= 'font-size:2em'> All Done!</h4>");
-//     $(".correctAns").append("<h4>Correct Answers :" + correctAnswers + "</h4>");
-//     $(".inCorrectAns").append("<h4> Incorrect Answers :" + inCorrectAnswers + "</h4>");
-//     $(".unAns").append("<h4>Unanswered :" + unAnswered + "</h4>"); 
+    $("#questions").remove();
+    $(".done").append("<h4 style= 'font-size:2em'> All Done!</h4>");
+    $(".correctAns").append("<h4>Correct Answers :" + correctAnswers + "</h4>");
+    $(".inCorrectAns").append("<h4> Incorrect Answers :" + inCorrectAnswers + "</h4>");
+    $(".unAns").append("<h4>Unanswered :" + unAnswered + "</h4>"); 
 
  }
  //startGame function is called when start button is clicked.
