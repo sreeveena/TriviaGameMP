@@ -12,16 +12,18 @@ This assignment has one HTML page, one javascript file and one CSS file:
 3. style.css
 
  The following directories and files are in this project.
- '''
+
  $./tree-md .
  #TriviaGameMP tree
- *README.md
- *index.html
- *assets
-    *css
-        *style.css
-    *javascript
-        *app.js
+ .[tree-md](./TriviaGameMP)
+
+ *[README.md](./TriviaGameMP/README.md)
+ *[index.html](./TriviaGameMP/index.html)
+ *[assets](./TriviaGameMP/assets)
+    *[css](./TriviaGameMP/assets/css)
+        *[style.css](./TriviaGameMP/assets/css/style.css)
+    *[javascript](./TriviaGameMP/assets/javascript)
+        *[app.js](./TriviaGameMP/assets/javascript/app.js)
     *images
         *Piston_cup.png
         *Pixarlogo.jpg
@@ -34,7 +36,7 @@ This assignment has one HTML page, one javascript file and one CSS file:
         *toyStory3.gif
         *up.gif
         *wall-e.gif*
- '''
+ 
 
 In this Trivia game the player has to click on start button and have to answer the one trivia questions with multiple options for answers
 with limited amount of time to select the answer. The game ends when the last question appears with its timer. The page will reveal the number of questions that players answer correctly, incorrectly and unanswered and have an option to startover the game.
