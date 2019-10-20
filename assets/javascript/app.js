@@ -170,7 +170,7 @@ var answer;
     }
   
  function finalResult(){
-    clearInterval(intervalId);
+    clearInterval(intervalId);       
     $(".timeRemaining").remove();
     $("#questions").remove();
 
@@ -197,7 +197,14 @@ var answer;
 
  function startOver(){
     $(".timeRemaining").remove();
-    $("#questions").remove();
+    $(".correctAns").remove();
+    $(".inCorrectAns").remove();
+    $(".unAns").remove();
+    $("#done").remove();
+    $(".done").remove();
+    qi= 0;
+    ai= 0;
+    startGame();
  }
  //startGame function is called when start button is clicked.
 $(".start").on("click", startGame); 
