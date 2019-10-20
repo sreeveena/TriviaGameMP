@@ -180,7 +180,10 @@ var answer;
             inCorrectAnswers++;
         }
     }
-  //
+  //function FinalResult will remove timeRemaining, question, correct, incorrect and unanswered questions.
+  //and display number of correct answers, incorrect answers and unanswered questions
+  //and generate start over button which when clicked will call startOver function.
+
  function finalResult(){
     clearInterval(intervalId);       
     $("#timeRemaining").remove();
@@ -209,6 +212,9 @@ var answer;
    $("#done").on("click",startOver);
  }
 
+ //function startOver will reset correct, incorrect, unanswered, qi(questionindex) and ai(answer index) to zero.
+ //it will also remove timeRemaining, correctAns, inCorrectAns, unAns, class=done and id=done and call startGame
+ //which will show the first question with its options and the timer with 20 seconds. 
  function startOver(){
     $(".timeRemaining").remove();
     $(".correctAns").remove();
@@ -223,6 +229,6 @@ var answer;
     ai= 0;
     startGame();
  }
- //startGame function is called when start button is clicked.
+ //startGame function is called when start button is clicked for the first time when player starts the game.
 $(".start").on("click", startGame); 
 })
