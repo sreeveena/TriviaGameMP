@@ -94,7 +94,6 @@ var answer;
     //clears time if the timer reaches to 0 and calls the function timer.
     function timeRemaining(){
         $("#timeRemaining").text("Time Remaining :" + timeRemain );
-        timeRemain--;
         if(timeRemain == 0){
             clearInterval(intervalId);
          $("#questions").remove();
@@ -107,6 +106,7 @@ var answer;
         $(".unAns").append(img);
         unAnswered++;
         }
+        timeRemain--;
     }
 
 
@@ -192,7 +192,12 @@ var answer;
 
     startOverButton = $("<br><button id= 'done'> Start Over </button>");
    $(".main").append(startOverButton);
-   $("#done").on("click",startGame);
+   $("#done").on("click",startOver);
+ }
+
+ function startOver(){
+    $(".timeRemaining").remove();
+    $("#questions").remove();
  }
  //startGame function is called when start button is clicked.
 $(".start").on("click", startGame); 
