@@ -11,56 +11,6 @@ This assignment has one HTML page, one javascript file and one CSS file:
 2. app.js
 3. style.css
 
- The following directories and files are in this project.
-
- $./tree-md .
- #TriviaGameMP tree
- .[tree-md](./TriviaGameMP)
-
- *[README.md](./TriviaGameMP/README.md)
- *[index.html](./TriviaGameMP/index.html)
- *[assets](./TriviaGameMP/assets)
-    *[css](./TriviaGameMP/assets/css)
-        *[style.css](./TriviaGameMP/assets/css/style.css)
-    *[javascript](./TriviaGameMP/assets/javascript)
-        *[app.js](./TriviaGameMP/assets/javascript/app.js)
-    *images
-        *Piston_cup.png
-        *Pixarlogo.jpg
-        *bugsLife.gif
-        *cars2.gif
-        *monsterInc.gif
-        *monsterUniversity.png
-        *pixarlogo1.jpg
-        *toy.gif
-        *toyStory3.gif
-        *up.gif
-        *wall-e.gif*
-        
-        '''bash
-├── README.md
-├── assets
-│   ├── css
-│   │   └── style.css
-│   ├── images
-│   │   ├── Piston_cup.png
-│   │   ├── Pixarlogo.jpg
-│   │   ├── bugsLife.gif
-│   │   ├── cars2.gif
-│   │   ├── incredeables.gif
-│   │   ├── monsterInc.gif
-│   │   ├── monsterUniversity.png
-│   │   ├── pixarlogo1.jpg
-│   │   ├── toy.gif
-│   │   ├── toyStory3.gif
-│   │   ├── up.gif
-│   │   └── wall-e.gif
-│   └── javascript
-│       └── app.js
-└── index.html
-'''
- 
-
 In this Trivia game the player has to click on start button and have to answer the one trivia questions with multiple options for answers
 with limited amount of time to select the answer. The game ends when the last question appears with its timer. The page will reveal the number of questions that players answer correctly, incorrectly and unanswered and have an option to startover the game.
 
